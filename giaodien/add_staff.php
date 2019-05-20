@@ -20,9 +20,9 @@
 											MatKhau, 
 											CH_ID) 
 								VALUES ('$a', 
-										'$g', 
+										N'$g', 
 										'$h', 
-										'$b', 
+										N'$b', 
 										'$c', 
 										'$d', 
 										'$e', 
