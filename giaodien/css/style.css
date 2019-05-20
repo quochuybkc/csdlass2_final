@@ -1,0 +1,377 @@
+body{
+	background-color: #fff;
+	position: relative;
+}
+* {
+    box-sizing: border-box;
+}
+.jumbotron {
+      background-color: #d30f30;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+      margin: 0 auto;
+  }
+.navbar{
+	background-color: #890000;
+	border: 0;
+}
+.navbar li a, .navbar .navbar-brand{
+	color: #fff; !important;
+}
+.navbar-nav li a:hover{
+	color: #d30f30 !important;
+	background-color: #fff !important;
+}
+ .inner-wrapper {
+  display:table-cell;
+  vertical-align:middle;
+  padding:15px;
+}
+a.pd-name{
+	color: #000000;
+	padding-left:10px;
+}
+p.describe{
+	font-size: 15px;
+	font-weight:bold;
+	padding-left: 10px;
+}
+.pd-box:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.affix {
+    top: 50px;
+ }
+ @media screen and (max-width:768px){
+	input.col-1{
+		width:90%;
+		margin-left:0px;
+	}
+	.imgtop{
+		width:100%;
+		height:250px;
+	}
+	div.a, div.b{
+		display:none;
+	}
+	div.item{
+		height:250px;
+	}
+	p.titleAb{
+		font-size:35px;
+	}
+	p.aboutPF{
+		font-size:20px;
+	}
+	div.swap{
+		width:80%;
+	}
+	div.log a{
+		font-size:20px;
+	}
+	div.log p{
+		font-size:16px;
+	}
+	div.hm{
+		width:50%;
+	}
+}
+ div.col-sm-9 div {
+      height: 250px;
+      font-size: 28px;
+  }
+  #section1 {color: #fff; background-color: #1E88E5;}
+  #section2 {color: #fff; background-color: #673ab7;}
+  #section3 {color: #fff; background-color: #ff9800;}
+  #section41 {color: #fff; background-color: #00bcd4;}
+  #section42 {color: #fff; background-color: #009688;}
+  
+  @media screen and (min-width: 768px) and (max-width:992px) {
+    #section1, #section2, #section3, #section41, #section42  {
+        margin-left: 150px;
+    }
+	.imgtop{
+		height:250px;
+		margin-top:100px;
+		width:100%;
+	}
+	div.swap{
+		width:60%;
+	}
+  }
+ #thongtin {color: #fff; background-color: #1E88E5;}
+
+
+@media screen and (min-width:992px){
+	.imgtop{
+		margin-top:50px;
+		width:100%;
+		height:350px;
+	}
+}
+.logged{
+	margin: 5px;
+	float: right;
+	color: #d30f30;
+}
+.sidebar{
+	background-color: #a6a6a6;
+	border-radius: 0;
+	color: #fff;
+	width: 100px;
+}
+.sidebar:hover{
+	background-color: #c3c3c3;
+	color: #fff;
+}
+.footer{
+	background-color: #fafafa;
+	color: #000;
+	height:200px;
+	border-top:1px solid #f1f1f1;
+}
+.thumbnail{
+	min-height: 250px;
+}
+.imgf{
+	width:100%;
+}
+a.pd-name:hover{
+	color:#0879a5
+}
+.signIn, .otherSignIn{
+	width:80%;
+	margin-top:50px;
+	margin-left:auto;
+	margin-right:auto;
+	border:1px solid #dedede;
+	background-color:#f5f5f5;
+	border-radius:5px;
+	box-shadow: 0 0 15px 0 hsla(0,0%,39.2%,.4);
+}
+.signIncap{
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:15px;
+	font-weight:bold;
+	color:#5d5d5d;
+	font-size:18px;
+	border-bottom:2px solid rgb(210, 211, 190);
+}
+.sign{
+	margin-top:20px;
+	margin-left:10%;
+}
+input{
+	height:22px;
+	margin-bottom:15px;
+	width:25%;
+}
+[type~=checkbox]{
+	height:12px;
+	width:12px;
+}
+.uname{
+	margin-left:19px;
+	border-radius:3px;
+	border:1px solid gray;
+	font-size:12px;
+}
+.pwd{
+	margin-left:45px;
+	border-radius:3px;
+	border:1px solid gray;
+	font-size:12px;
+}
+.email{
+	margin-left:40px;
+	margin-top:0px;
+	border-radius:3px;
+	border:1px solid gray;
+	font-size:12px;
+}
+.source{
+	margin-left:10px;
+	width:17px;
+	height:17px;
+	vertical-align:top;
+}
+.price{
+	color:#a2a2a2;
+	font-size:12px;
+	text-decoration:line-through;
+	font-weight:300;
+}
+.saleoff{
+	color:#000;
+	font-weight:500;
+	font-size:13px;
+	margin-left:2px;
+}
+.signOther{
+	margin:20px 0px 20px 20px;
+}
+.aboutUs{
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	width:80%;
+	background:#fff;
+	padding: 40px 30px;
+    margin-top: -50px;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 0 hsla(0,0%,39.2%,.4);
+	margin-bottom:50px;
+}
+.titleAb{
+	color: #222;
+    font-size: 54px;
+    line-height: 63px;
+    margin-bottom: 60px;
+    margin-top: 40px;
+	text-align:center;
+}
+.aboutPF{
+	color:#d30f30;
+	margin:30px 0px 20px 30px;
+	font-size:28px;
+}
+.aboutPFtext{
+	color:#757575;
+	font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+	margin-left:30px;
+}
+.letter{
+	margin-top:20px;
+	border:1px solid #dedede;
+	background-color:#f5f5f5;
+	border-radius:5px;
+	margin-bottom:10px;
+	text-align:center;
+}
+.comment{
+	margin-top:20px;
+	border:1px solid #dedede;
+	background-color:#f5f5f5;
+	border-radius:5px;
+	margin-bottom:10px;
+}
+.ft{
+	color:#58595b;
+	margin-left:50px;
+	margin-top:20px;
+}
+.a{	
+	float:right;
+	padding-top:100px;
+	color:#d30f30;
+	width:200px;
+}
+.b{
+	float:left;
+	margin-top:40px;
+	margin-left:100px;
+}
+.carous{
+	width:100%;
+	height:400px;
+}
+/*// all product ////*/
+
+
+.swap{
+
+	/*position:relative;*/
+	width: 40%;
+	height: auto;
+	/*background-color: grey;*/
+	margin: 30px auto;
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #F59395;
+	-moz-border-radius-topleft:20px;
+	-webkit-border-top-left-radius:20px;
+
+	-moz-border-radius-topright:20px;
+	-webkit-border-top-right-radius:20px;
+
+	-moz-border-radius-bottomleft:10px;
+	-webkit-border-bottom-left-radius:10px;
+
+	
+
+	-moz-border-radius-bottomright:20px;
+	-webkit-border-bottom-right-radius:20px;
+}
+.log img{
+	width: 100%;
+	height: auto;
+	-moz-border-radius-topleft:20px;
+	-webkit-border-top-left-radius:20px;
+
+	-moz-border-radius-bottomleft:20px;
+	-webkit-border-bottom-left-radius:20px;
+
+	-moz-border-radius-topright:20px;
+	-webkit-border-top-right-radius:20px;
+
+	-moz-border-radius-bottomright:20px;
+	-webkit-border-bottom-right-radius:20px;
+}
+.log{
+	
+	text-align: center;
+	
+	font-family: Montserrat, sans-serif;
+	margin: auto;
+}
+.log a{
+	text-decoration: none;
+	font-size: 30px;
+	color: #2EB1D0;
+}
+.swap p{
+	text-align: center;
+	padding: 10px 20px;
+	font-family: Montserrat, sans-serif;
+	font-size: 20px;
+}
+.hm{
+
+	height:auto;
+	width: 30%;
+	font-color: #fff;
+	background-color: #d30f30;
+	-moz-border-radius-topleft:10px;
+	-webkit-border-top-left-radius:10px;
+
+	-moz-border-radius-bottomleft:10px;
+	-webkit-border-bottom-left-radius:10px;
+
+	-moz-border-radius-topright:10px;
+	-webkit-border-top-right-radius:10px;
+
+	-moz-border-radius-bottomright:10px;
+	-webkit-border-bottom-right-radius:10px;
+	text-decoration: none;
+	margin: 30px auto;
+	text-align: center;
+}
+.hm a{
+	text-decoration: none;
+	text-align: center;
+	padding: 10px auto;
+	color: #fff;
+	font-family: Montserrat, sans-serif;
+	font-size: 20px;
+
+}
+.binhluan{
+	width: 50%;
+	background-color: #fff;
+	border: 1px solid black;
+}
