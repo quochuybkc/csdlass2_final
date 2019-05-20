@@ -40,7 +40,7 @@ BEGIN
 			SET @err = N'Hàng hóa không tồn tại!'
 			RETURN @err
 		END 
-	IF NOT EXISTS(SELECT hh.KM_ID FROM dbo.HangHoa hh WHERE hh.HH_Ten = @mathang)
+	IF ((SELECT hh.KM_ID FROM dbo.HangHoa hh WHERE hh.HH_Ten = @mathang) IS NULL)
 		RETURN	N'Không có khuyến mãi!'
 	ELSE
 		BEGIN 
@@ -56,6 +56,10 @@ FROM dbo.HangHoa hh
 WHERE hh.HH_Ten = N'giấy';
 
 GO
+			       
+SELECT hh.HH_Ten AS N'Mặt hàng', hh.Gia AS N'Giá trước', dbo.newprice(hh.HH_Ten) AS N'Giá sau' 
+FROM dbo.HangHoa hh
+GO			       
 
 
 
