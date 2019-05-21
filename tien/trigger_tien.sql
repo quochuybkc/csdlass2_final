@@ -1,6 +1,6 @@
-﻿USE ass2
+USE ass2
 GO
-----------------------------
+----------------------------2a
 CREATE TABLE KH_edit (
     	id INT IDENTITY(1,1) PRIMARY KEY,
    	KH_ID varchar(10) NOT NULL,
@@ -12,41 +12,18 @@ KH_CMND char(9) NOT NULL,
        changedate DATETIME DEFAULT NULL,
        action VARCHAR(50) DEFAULT NULL
 );
-----------------------------
-CREATE TRIGGER before_khachhang_update 
-    BEFORE UPDATE ON dbo.KhachHang
-    FOR EACH ROW 
-BEGIN
-    INSERT INTO KH_edit
-    SET action = 'update',
-		KH_ID = OLD.KH_ID,
-		KH_HoVaTen = OLD.KH_HoVaTen,
-		KH_CMND = OLD.KH_CMND,
-		KH_DiaChi = OLD.KH_DiaChi,
-		KH_SDT = OLD.KH_SDT,
-		KH_DiemTichLuy = OLD.KH_DiemTichLuy,
-        changedate = NOW(); 
-END
 
-----------------------------
-UPDATE dbo.KhachHang 
-SET 
-    KH_DiemTichLuy = 9
-WHERE
-    KH_ID = kh6;
--truy vấn trên bảng KH_edit:
-SELECT  * FROM KH_edit;
 
-----------------------------
+----------------------------2b
 
 CREATE TABLE DH_edit(
     change_id INT IDENTITY PRIMARY KEY,
-    DH_ID int IDENTITY(0,1) NOT NULL,
-	MatHang nvarchar(20) NOT NULL,
-	NhanVienBan nvarchar(20),
-	TongTien varchar(10) NOT NULL,
-	DiemTichLuy int,
-	TienKhuyenMai varchar(10),
+    DH_ID varchar(10) NOT NULL, 
+	KH_ID varchar(10) NOT NULL,
+	HH_ID varchar(10) NOT NULL,
+    TongTien varchar(10) NOT NULL,
+    TienKhuyenMai varchar(10),
+	SL int NOT NULL,
     updated_at DATETIME NOT NULL,
     operation CHAR(3) NOT NULL,
     CHECK(operation = 'INS' or operation='DEL')
@@ -60,33 +37,33 @@ BEGIN
     SET NOCOUNT ON;
     INSERT INTO DH_edit(
         DH_ID, 
-        MatHang,
-        NhanVienBan,
+        KH_ID,
+        HH_ID,
         TongTien,
-        DiemTichLuy,
-        TienKhuyenMai, 
+        TienKhuyenMai,
+		SL, 
         updated_at, 
         operation
     )
     SELECT
-        i.DH_ID,
-        MatHang,
-        NhanVienBan,
+        i.DH_ID, 
+        KH_ID,
+        HH_ID,
         TongTien,
-        DiemTichLuy,
-        i.TienKhuyenMai,
+        TienKhuyenMai,
+		i.SL,
         GETDATE(),
         'INS'
     FROM
         inserted i
     UNION ALL
     SELECT
-        d.DH_ID,
-        MatHang,
-        NhanVienBan,
+        d.DH_ID, 
+        KH_ID,
+        HH_ID,
         TongTien,
-        DiemTichLuy,
-        d.TienKhuyenMai,
+        TienKhuyenMai,
+		d.SL,
         GETDATE(),
         'DEL'
     FROM
@@ -94,13 +71,53 @@ BEGIN
 END
 
 ----------------------------
+INSERT INTO [dbo].[DonHang]
+           ([DH_ID]
+           ,[KH_ID]
+           ,[HH_ID]
+           ,[TongTien]
+           ,[TienKhuyenMai]
+           ,[SL])
+     VALUES
+           ('dh18','kh4','hh3',13676792,0,12)
+----------------------------
 DELETE FROM 
     dbo.DonHang
 WHERE 
-    DH_id = 3;
+    DH_id = 'dh1';
 
 ----------------------------
 SELECT 
     * 
 FROM 
     DH_edit;
+
+
+
+----------------------------------------------------------2a
+
+
+CREATE TRIGGER before_khachhang_update 
+   ON dbo.KhachHang
+    for UPDATE 
+	AS 
+BEGIN
+	DECLARE @a varchar(10), @b nvarchar(20), @c varchar(20), @d nvarchar(20), @e varchar(20), @f int
+	SELECT @a=d.KH_ID, @b=d.KH_HoVaTen, @c = d.KH_CMND, @d= d.KH_DiaChi, @e=d.KH_SDT,@f=d.KH_DiemTichLuy
+	FROM INSERTED d
+	INSERT INTO KH_edit(KH_ID, KH_HoVaTen,KH_CMND,KH_DiaChi,KH_SDT,KH_DiemTichLuy,changedate,action)
+    VALUES(
+		@a,@b,@c,@d,@e,@f,getdate(),'update'
+	)
+	UPDATE dbo.KhachHang SET KH_ID=@a, KH_HoVaTen=@b, KH_CMND=@c, KH_DiaChi=@d, KH_SDT=@e, KH_DiemTichLuy=@f WHERE @a=dbo.KhachHang.KH_ID
+END
+-------------------------------
+UPDATE dbo.KhachHang 
+SET 
+    KH_DiemTichLuy = 70
+
+WHERE
+    KH_ID = 'kh7';
+	     
+	     
+SELECT  * FROM KH_edit;
