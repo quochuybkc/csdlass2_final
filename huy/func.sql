@@ -1,7 +1,7 @@
 ﻿USE ass2
 GO
 --- đếm số nhân viên có tuổi > x, 10<x<30
-ALTER FUNCTION func4a(@age int)
+CREATE FUNCTION func4a(@age int)
 RETURNS nvarchar(30)
 AS
 BEGIN 
