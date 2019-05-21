@@ -182,5 +182,3 @@ CREATE TABLE The
 	PRIMARY KEY (HH_ID)
 );
 
-ALTER TABLE dbo.DonHang
-ADD column 
