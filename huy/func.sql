@@ -24,9 +24,6 @@ SELECT dbo.func4a(20) AS'SLNV';
 
 GO
 
-SELECT dbo.func4a(20) AS'SLNV'
-
-GO
 -- Tính giá hàng hóa khi có khuyến mãi
 
 CREATE FUNCTION newprice(@mathang nvarchar(20))
